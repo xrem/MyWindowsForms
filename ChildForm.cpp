@@ -50,5 +50,16 @@ void MyWindowsForms::ChildForm::InitializeComponent(String^ label1Text)
 void MyWindowsForms::ChildForm::ChildForm_Load(Object^ sender, EventArgs^ e)
 {
 	MainForm^ owner = static_cast<MainForm^>(this->Owner);
-	this->label1->Text = owner->GetUserText();
+	String^ first = owner->GetFirstLine();
+	String^ second = owner->GetSecondLine();
+	int first_number = Int32::Parse(first);
+	int second_number = Int32::Parse(second);
+	int diff_first_length = first->Length - first_number.ToString()->Length;
+	int diff_second_length = second->Length - second_number.ToString()->Length;
+	int lead_zeros = Math::Max(diff_first_length, diff_second_length);
+	this->label1->Text = (first_number + second_number).ToString();
+	for (int i = 0; i < lead_zeros; i++)
+	{
+		this->label1->Text = "0" + this->label1->Text;
+	}
 }

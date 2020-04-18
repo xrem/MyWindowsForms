@@ -72,9 +72,14 @@ void MyWindowsForms::MainForm::InitializeComponent(void)
 
 }
 
-String^ MyWindowsForms::MainForm::GetUserText()
+String^ MyWindowsForms::MainForm::GetFirstLine()
 {
 	return this->textBox1->Text;
+}
+
+String^ MyWindowsForms::MainForm::GetSecondLine()
+{
+	return this->textBox2->Text;
 }
 
 void MyWindowsForms::MainForm::button1_Click(Object^ sender, EventArgs^ e)

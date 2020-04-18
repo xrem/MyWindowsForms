@@ -8,7 +8,8 @@ namespace MyWindowsForms {
 	{
 	public:
 		MainForm(void);
-		String^ GetUserText();
+		String^ GetFirstLine();
+		String^ GetSecondLine();
 
 	protected:
 		~MainForm();
